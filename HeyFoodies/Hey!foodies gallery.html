@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Hey!foodies.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Document</title>
+    <style>
+    *{
+     margin:0;
+     padding:0;
+     box-sizing:border-box;
+    }
+    body{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        min-height:100vh;
+        background:white;
+    }
+    .gall-ery{
+    position:relative;
+    height:200px;
+    width:200px;
+    transform-style:preserve-3d;
+    animation:animate 20s linear infinite;
+  }
+  @keyframes animate{
+      0%{
+          transform:perspective(1000px) rotateY(0deg);
+      }
+      100%{
+          transform:perspective(1000px) rotateY(360deg);
+      }
+  }
+  .gall-ery span{
+    position:absolute;
+    top:0px;
+    left:0px;
+    height:100%;
+    width:100%;
+    transform-origin:center;
+    transform-style:preserve-3d;
+    transform:rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+    -webkit-box-reflect:below 0px linear-gradient(transparent,transparent,#0006);
+  }
+  .gall-ery span img{
+      position:absolute;
+      top:0px;
+      left:0px;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+  }
+</style>
+</head>
+<body>
+    
+ 
+    <!-- Gallery -->
+    <div class="gall-ery">
+        <span style="--i:1"><img src="images/pizza.jpg"/></span>
+        <span style="--i:2"><img src="images/pizza2.jpg"/></span>
+        <span style="--i:3"><img src="images/pizza3.jpg"/></span>
+        <span style="--i:4"><img src="images/burger.jpg"/></span>
+        <span style="--i:5"><img src="images/burger2.jpg"/></span>
+        <span style="--i:6"><img src="images/honeyburger.jpg"/></span>
+        <span style="--i:7"><img src="images/thali.jpg"/></span>
+        <span style="--i:8"><img src="images/vegetables.jpg"/></span>
+    </div>
+</body>
+</html>
